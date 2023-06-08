@@ -39,28 +39,28 @@ namespace _02_Controls
 
         private void Oreder_Click(object sender, RoutedEventArgs e)
         {
-            //if(NameTextBox.Text == string.Empty || SurnameTextBox.Text == string.Empty || PhoneTextBox.Text == string.Empty || CountVisitoursLabel.Content.ToString() == "0" || AcceptCheckBox.IsChecked == false || economRadioButton.IsChecked == false &&
-            //    standartRadioButton.IsChecked == false && luxRadioButton.IsChecked == false)
-            //{
-            //    return;
-            //}
+            if (Calendar.SelectedDates.Count == 0 || NameTextBox.Text == string.Empty || SurnameTextBox.Text == string.Empty || PhoneTextBox.Text == string.Empty || CountVisitoursLabel.Content.ToString() == "0" || AcceptCheckBox.IsChecked == false)
+            {
+                return;
+            }
 
             string category = string.Empty;
             if (economRadioButton.IsChecked == true)
                 category = economRadioButton.Content.ToString();
-            else if(standartRadioButton.IsChecked == true)
+            else if (standartRadioButton.IsChecked == true)
                 category = standartRadioButton.Content.ToString();
-            else 
+            else if (luxRadioButton.IsChecked == true)
                 category = luxRadioButton.Content.ToString();
+            else
+                return;
 
-            MessageBox.Show($@"
-{NameTextBox.Text} {SurnameTextBox.Text}
+          
+            MessageBox.Show($@"{NameTextBox.Text} {SurnameTextBox.Text}
 {PhoneTextBox.Text}
 Count guests : {CountVisitoursLabel.Content}
 Category: {category}
 From: {Calendar.SelectedDates.First()}
-To: {Calendar.SelectedDates.Last()}
-");
+To: {Calendar.SelectedDates.Last()}");
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

@@ -20,29 +20,30 @@
         
         <Label Content="Hotel" FontSize="30" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
 
-        <Label Content="Name:" Grid.Row="1" VerticalContentAlignment="Center" FontSize="20"/>
-        <TextBox x:Name="NameTextBox"  Grid.Row="1" Margin="100,10,10,10" VerticalContentAlignment="Center" FontSize="15"/>
+        <Label Grid.Row="1" VerticalContentAlignment="Center" FontSize="20" Target="{Binding ElementName=NameTextBox}">_Name:</Label>
+        <TextBox x:Name="NameTextBox" Grid.Row="1" Margin="100,10,10,10" VerticalContentAlignment="Center" FontSize="15"></TextBox>
 
-        <Label Content="Surname:" Grid.Row="2" VerticalContentAlignment="Center" FontSize="20"/>
+        <Label Grid.Row="2" VerticalContentAlignment="Center" FontSize="20" Target="{Binding ElementName=SurnameTextBox}">_Surname:</Label>
         <TextBox x:Name="SurnameTextBox" Grid.Row="2" Margin="100,10,10,10" VerticalContentAlignment="Center" FontSize="15"/>
 
-        <Label Content="Phone:" Grid.Row="3" VerticalContentAlignment="Center" FontSize="20"/>
+        <Label Grid.Row="3" VerticalContentAlignment="Center" FontSize="20" Target="{Binding ElementName=PhoneTextBox}">_Phone:</Label>
         <TextBox x:Name="PhoneTextBox" Grid.Row="3" Margin="100,10,10,10" VerticalContentAlignment="Center" FontSize="15"/>
 
-        <Label Content="Count visitours:" Grid.Row="4" VerticalContentAlignment="Center" FontSize="20"/>
+        <Label Grid.Row="4" VerticalContentAlignment="Center" FontSize="20" Target="{Binding ElementName=CountGuestsRepeatButton}">_Count visitours:</Label>
         <Label x:Name="CountVisitoursLabel" Content="0" Grid.Row="4" Margin="140,10,10,10" VerticalContentAlignment="Center" FontSize="20"/>
-        <RepeatButton Grid.Row="4" Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,10,0" Click="RepeatButton_Click" Delay="2000" Interval="100" Width="100" Height="40">Add one</RepeatButton>
+        <RepeatButton x:Name="CountGuestsRepeatButton" Grid.Row="4" Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,10,0" Click="RepeatButton_Click" Delay="2000" Interval="100" Width="100" Height="40">Add one</RepeatButton>
 
         <Label Content="Category:" Grid.Row="5" FontSize="15" Margin="0"/>
         <StackPanel Grid.Row="5" Margin="80,5,5,5" x:Name="CategoryStackPanel">
-            <RadioButton GroupName="category" x:Name="economRadioButton">Econom</RadioButton>
-            <RadioButton GroupName="category" x:Name="standartRadioButton">Standart</RadioButton>
-            <RadioButton GroupName="category" x:Name="luxRadioButton">Lux</RadioButton> 
+            <RadioButton GroupName="category" x:Name="economRadioButton">_Econom</RadioButton>
+            <RadioButton GroupName="category" x:Name="standartRadioButton">S_tandart</RadioButton>
+            <RadioButton GroupName="category" x:Name="luxRadioButton">_Lux</RadioButton> 
         </StackPanel>
 
         <Calendar Name="Calendar" DisplayMode="Month" SelectionMode="SingleRange" Grid.Row="5" Grid.RowSpan="3" HorizontalAlignment="Right" Margin="10,0,10,10"/>
-        
-        <CheckBox x:Name="AcceptCheckBox"  Content="I accept all conditions" Grid.Row="6" Margin="5" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="6" FontSize="15" Target="{Binding ElementName=AcceptCheckBox}">Do you confirm _all terms?</Label>
+        <CheckBox x:Name="AcceptCheckBox" Content="I accept all conditions" Grid.Row="6" Margin="5" VerticalAlignment="Center"/>
 
         <Button Content="Order now" Grid.Row="7" Margin="10,0,0,0" HorizontalAlignment="Left" Background="{x:Null}" Width="100" Height="40" Click="Oreder_Click"/>
         

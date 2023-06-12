@@ -29,20 +29,35 @@ namespace _03_Bindings
             this.DataContext = viewModel;
 
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            ColorsListBox.Items.Add(viewModel);
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if(ColorsListBox.SelectedItem != null)
+                ColorsListBox.Items.Remove(ColorsListBox.SelectedItem);
+        }
     }
 
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
-
+        public int ID { get; set; } 
         public byte AlphaValue { get; set; }
-        public byte RedVlue { get; set; }
+        public byte RedValue { get; set; }
         public byte GreenValue { get; set; }
         public byte BlueValue { get; set; }
 
-        public Color color => Color.FromArgb(AlphaValue, RedVlue, GreenValue, BlueValue);
-        
-       
+        public Color color => Color.FromArgb(AlphaValue, RedValue, GreenValue, BlueValue);
+
+        public override string ToString()
+        {
+            return $"{color}";
+        }
+
 
     }
 

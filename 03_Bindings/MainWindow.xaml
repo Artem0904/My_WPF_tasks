@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_03_Bindings"
         mc:Ignorable="d"
-        Title="Colour Viewer" Height="350" Width="550" MinHeight="350" MinWidth="550">
+        Title="Color Viewer" Height="350" Width="550" MinHeight="350" MinWidth="550">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,10 +33,10 @@
         <Label x:Name="GreenLabel" Content="{Binding ElementName=GreenSlider, Path=Value}" Grid.Row="2" Grid.Column="1" FontSize="15" HorizontalAlignment="Center"></Label>
         <Label x:Name="BlueLabel" Content="{Binding ElementName=BlueSlider, Path=Value}" Grid.Row="3" Grid.Column="1" FontSize="15" HorizontalAlignment="Center"></Label>
 
-        <Slider x:Name="AlphaSlider" Value="{Binding AlphaValue}" Grid.Row="0" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="100"/>
-        <Slider x:Name="RedSlider"   Grid.Row="1" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
-        <Slider x:Name="GreenSlider" Grid.Row="2" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True"  Maximum="255"/>
-        <Slider x:Name="BlueSlider"  Grid.Row="3" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
+        <Slider x:Name="AlphaSlider" Value="{Binding AlphaValue}" Grid.Row="0" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
+        <Slider x:Name="RedSlider"   Value="{Binding RedValue}" Grid.Row="1" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
+        <Slider x:Name="GreenSlider" Value="{Binding GreenValue}" Grid.Row="2" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True"  Maximum="255"/>
+        <Slider x:Name="BlueSlider"  Value="{Binding BlueValue}" Grid.Row="3" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
 
         <Border x:Name="ColorBorder" Grid.Column="4" Grid.RowSpan="4" Margin="5">
             <Border.Background>
@@ -44,10 +44,10 @@
             </Border.Background>
         </Border>
         
-        <Button Grid.Row="4" Grid.ColumnSpan="2" Width="85" Margin="5">Add</Button>
-        <Button Grid.Row="4" Grid.Column="2" Width="85" Margin="5" HorizontalAlignment="Left">Delete</Button>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Width="85" Margin="5" Click="Add_Click">Add</Button>
+        <Button Grid.Row="4" Grid.Column="2" Width="85" Margin="5" HorizontalAlignment="Left" Click="Delete_Click">Delete</Button>
 
-        <ListBox Grid.Row="5" Grid.ColumnSpan="4" Margin="5">
+        <ListBox x:Name="ColorsListBox" Grid.Row="5" Grid.ColumnSpan="4" Margin="5">
             
         </ListBox>
         

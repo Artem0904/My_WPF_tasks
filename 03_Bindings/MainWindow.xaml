@@ -37,10 +37,10 @@
         <Slider x:Name="RedSlider"   Value="{Binding RedValue}" Grid.Row="1" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
         <Slider x:Name="GreenSlider" Value="{Binding GreenValue}" Grid.Row="2" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True"  Maximum="255"/>
         <Slider x:Name="BlueSlider"  Value="{Binding BlueValue}" Grid.Row="3" Grid.Column="2" Margin="5" VerticalAlignment="Center" TickFrequency="1" IsSnapToTickEnabled="True" Maximum="255"/>
-
+        
         <Border x:Name="ColorBorder" Grid.Column="4" Grid.RowSpan="4" Margin="5">
             <Border.Background>
-                <SolidColorBrush Color="{Binding color}"/>
+                <SolidColorBrush Color="{Binding SelectedColor}"/>
             </Border.Background>
         </Border>
         

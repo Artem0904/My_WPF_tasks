@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,42 +24,36 @@ namespace _03_Bindings
     public partial class MainWindow : Window
     {
         private ViewModel viewModel = new();
-
+        ObservableCollection<Color> colors = new ObservableCollection<Color>();
         public MainWindow()
         {
             InitializeComponent();
+            viewModel = new ViewModel();
             this.DataContext = viewModel;
-
+            ColorsListBox.ItemsSource= colors;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            ColorsListBox.Items.Add(viewModel);
+            colors.Add(viewModel.SelectedColor);
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             if(ColorsListBox.SelectedItem != null)
-                ColorsListBox.Items.Remove(ColorsListBox.SelectedItem);
+                colors.RemoveAt(ColorsListBox.SelectedIndex);
         }
     }
-
+    
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
-        public int ID { get; set; } 
         public byte AlphaValue { get; set; }
         public byte RedValue { get; set; }
         public byte GreenValue { get; set; }
         public byte BlueValue { get; set; }
 
-        public Color color => Color.FromArgb(AlphaValue, RedValue, GreenValue, BlueValue);
-
-        public override string ToString()
-        {
-            return $"{color}";
-        }
-
+        public Color SelectedColor => Color.FromArgb(AlphaValue, RedValue, GreenValue, BlueValue);
 
     }
 

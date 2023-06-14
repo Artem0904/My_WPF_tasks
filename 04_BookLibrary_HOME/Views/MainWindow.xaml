@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:_04_BookLibrary_HOME"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Window.Resources>
         <Style x:Key="ButtonlStyle" TargetType="{x:Type Button}">
             <Setter Property="Margin" Value="10"/>
@@ -36,14 +37,14 @@
             <Label FontSize="30" HorizontalAlignment="Center">Details</Label>
 
             <Label Grid.Row="1" Style="{StaticResource TextStyle}" VerticalAlignment="Center">Novel by </Label>
-            <Label Grid.Row="1" Name="AuthorLabel" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="85,0"></Label>
+            <Label Grid.Row="1" Name="AuthorLabel" Content="{Binding SelectedBook.Title}" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="85,0"/>
 
             <Label Grid.Row="2" Style="{StaticResource TextStyle}" >Published:</Label>
-            <Label Grid.Row="2" Style="{StaticResource TextStyle}" Margin="95,0">dsfsg</Label>
+            <Label Grid.Row="2" Content="{Binding SelectedBook.ReleaseDate}" Style="{StaticResource TextStyle}" Margin="95,0"></Label>
 
             <Label Grid.Row="3" Style="{StaticResource TextStyle}">Description:</Label>
-            <TextBlock Grid.Row="4" Padding="5,0,0,0" Margin="5" x:Name="DescriptionTxtBlock" FontSize="16"></TextBlock>
-
+            <TextBlock Grid.Row="4" Text="{Binding SelectedBook.Description}" Padding="5,0,0,0" Margin="5" x:Name="DescriptionTxtBlock" FontSize="16"></TextBlock>
+            
             <Button Grid.Row="5" Margin="10" Width="120" Height="50" HorizontalAlignment="Left">Previos</Button>
             <Button Grid.Row="5" Margin="10" Width="120" Height="50" HorizontalAlignment="Right">Next</Button>
         </Grid>

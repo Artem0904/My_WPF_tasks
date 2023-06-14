@@ -17,7 +17,5 @@ namespace _04_BookLibrary_HOME.ViewModels
 
         public Book SelectedBook { get; set; }
 
-
-
     }
 }

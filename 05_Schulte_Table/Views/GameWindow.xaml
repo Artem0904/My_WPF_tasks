@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="GameWindow" Height="400" Width="400" Background="Purple">
     <Window.Resources>
-       <Style x:Key="DefaultBorderStyle" TargetType="{x:Type Border}">
+        <Style x:Key="DefaultBorderStyle" TargetType="{x:Type Border}">
             <Setter Property="BorderThickness" Value="0,0,0,5"/>
             <Setter Property="Background" Value="DarkGray"/>
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="CornerRadius" Value="5"/>
             <Setter Property="Margin" Value="0.5"/>
-        
+
             <Style.Triggers>
                 <EventTrigger RoutedEvent="MouseDown">
                     <BeginStoryboard>
@@ -29,9 +29,9 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    
+
     <Border Margin="5" CornerRadius="5" BorderBrush="Blue" Background="Purple">
-        <UniformGrid Rows="{Binding Path = MainWindow.cs\count}" Columns="{Binding Path = MainWindow.cs\count}" x:Name="GameField">
+        <UniformGrid Rows="5" Columns="5" x:Name="GameField">
             <Border Style="{StaticResource DefaultBorderStyle}"/>
             <Border Style="{StaticResource DefaultBorderStyle}"/>
             <Border Style="{StaticResource DefaultBorderStyle}"/>
@@ -57,7 +57,6 @@
             <Border Style="{StaticResource DefaultBorderStyle}"/>
             <Border Style="{StaticResource DefaultBorderStyle}"/>
             <Border Style="{StaticResource DefaultBorderStyle}"/>
-            
         </UniformGrid>
     </Border>
 </Window>

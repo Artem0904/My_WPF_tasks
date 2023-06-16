@@ -19,10 +19,11 @@ namespace _05_Schulte_Table
     /// </summary>
     public partial class GameWindow : Window
     {
-        
-        public GameWindow()
+        int count = 5;
+        public GameWindow(int count)
         {
             InitializeComponent();
+            this.count = count;
         }
     }
 }

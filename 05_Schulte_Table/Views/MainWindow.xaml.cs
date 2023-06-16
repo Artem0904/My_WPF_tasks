@@ -20,30 +20,16 @@ namespace _05_Schulte_Table
     /// </summary>
     public partial class MainWindow : Window
     {
-        GameWindow gameWindow;
+        ViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
-            gameWindow = new GameWindow();
+            viewModel = new ViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int count = 0;
-            if(DificultySlider.Value == 0)
-            {
-                count = 9;
-            }
-            else if(DificultySlider.Value == 0)
-            {
-                count = 7;
-            }
-            else
-            {
-                count = 7;
-            }
-            gameWindow.ShowDialog();
-            gameWindow.Close();
+            viewModel.createGameWindow(DificultySlider.Value);
         }
     }
 }

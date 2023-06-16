@@ -20,10 +20,12 @@ namespace _05_Schulte_Table
     public partial class GameWindow : Window
     {
         int count = 5;
+        GameViewModel gameViewModel = new GameViewModel();
         public GameWindow(int count)
         {
             InitializeComponent();
             this.count = count;
+            this.DataContext = gameViewModel;
         }
     }
 }

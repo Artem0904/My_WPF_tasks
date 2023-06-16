@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_05_Schulte_Table"
         mc:Ignorable="d"
-        Title="GameWindow" Height="400" Width="400" Background="Purple">
+        Title="GameWindow" Height="400" Width="400" MinHeight="400" MinWidth="400" Background="Purple">
     <Window.Resources>
         <Style x:Key="DefaultBorderStyle" TargetType="{x:Type Border}">
             <Setter Property="BorderThickness" Value="0,0,0,5"/>

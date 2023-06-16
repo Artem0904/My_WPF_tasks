@@ -8,8 +8,8 @@ namespace _05_Schulte_Table
 {
     public class ViewModel
     {
-        GameWindow gameWindow;
-
+        GameWindow gameWindow = new GameWindow(5);
+        
         public void createGameWindow(double SliderValue)
         {
             int count = 0;
@@ -29,5 +29,6 @@ namespace _05_Schulte_Table
             gameWindow.ShowDialog();
             gameWindow.Close();
         }
+
     }
 }

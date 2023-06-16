@@ -32,7 +32,7 @@
         <Label Grid.Row="2" Style="{StaticResource DificultyStyle}" Content="Easy" HorizontalAlignment="Left"/>
         <Label Grid.Row="2" Style="{StaticResource DificultyStyle}" Content="Normal" HorizontalAlignment="Center"/>
         <Label Grid.Row="2" Style="{StaticResource DificultyStyle}" Content="Hard" HorizontalAlignment="Right"/>
-        <Slider x:Name="DificultySlider" Grid.Row="3" Minimum="0" Maximum="2" Ticks="0,1,2" Value="2" TickPlacement="TopLeft" IsSnapToTickEnabled="True" Margin="10,0" VerticalAlignment="Top"/>
+        <Slider x:Name="DificultySlider" Grid.Row="3" Minimum="0" Maximum="2" Ticks="0,1,2" Value="0" TickPlacement="TopLeft" IsSnapToTickEnabled="True" Margin="10,0" VerticalAlignment="Top"/>
         
         <Button Grid.Row="4" Height="30" Width="100" Content="Start" Click="Button_Click"/>
     </Grid>

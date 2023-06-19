@@ -5,15 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_05_Schulte_Table"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
-    <Window.Resources>
-        <Style x:Key="DificultyStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="DarkCyan"/>
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
-        </Style>
-    </Window.Resources>
+        Title="Schulte table" Height="250" Width="400" MinHeight="250" MinWidth="400" MaxHeight="250" MaxWidth="400" Background="#FF565656">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -26,14 +18,15 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Content="Schulte table" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
-        
-        <Label Grid.Row="1" Content="Select the difficulty" Foreground="Gray" Style="{StaticResource DificultyStyle}" HorizontalAlignment="Center"/>
-        <Label Grid.Row="2" Style="{StaticResource DificultyStyle}" Content="Easy" HorizontalAlignment="Left"/>
-        <Label Grid.Row="2" Style="{StaticResource DificultyStyle}" Content="Normal" HorizontalAlignment="Center"/>
-        <Label Grid.Row="2" Style="{StaticResource DificultyStyle}" Content="Hard" HorizontalAlignment="Right"/>
-        <Slider x:Name="DificultySlider" Grid.Row="3" Minimum="0" Maximum="2" Ticks="0,1,2" Value="0" TickPlacement="TopLeft" IsSnapToTickEnabled="True" Margin="10,0" VerticalAlignment="Top"/>
-        
-        <Button Grid.Row="4" Height="30" Width="100" Content="Start" Click="Button_Click"/>
+        <Label Grid.Row="0" Content="Schulte table" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Agency FB"/>
+
+        <Label Grid.Row="1" Content="Select the difficulty" Style="{StaticResource DificultyLabelStyle}" HorizontalAlignment="Center"/>
+        <Label Grid.Row="2" Style="{StaticResource DificultyLabelStyle}" Content="Easy(3x3)" HorizontalAlignment="Left"/>
+        <Label Grid.Row="2" Style="{StaticResource DificultyLabelStyle}" Content="Normal(5x5)" HorizontalAlignment="Center"/>
+        <Label Grid.Row="2" Style="{StaticResource DificultyLabelStyle}" Content="Hard(7x7)" HorizontalAlignment="Right"/>
+        <Slider x:Name="DificultySlider" Grid.Row="3" Minimum="0" Maximum="2" Ticks="0,1,2" Value="0" TickPlacement="TopLeft" IsSnapToTickEnabled="True" Margin="10,0" VerticalAlignment="Top" Foreground="Black"/>
+
+        <Button Grid.Row="4" Height="30" Width="100" Content="Start" Click="Start_Click" Background="#FFA00606" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <Button Grid.Row="5" Height="30" Width="100" Content="Exit" Click="Exit_Click" Background="#FFA00606" BorderBrush="{x:Null}" FontWeight="Bold"/>
     </Grid>
 </Window>

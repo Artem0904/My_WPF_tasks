@@ -27,9 +27,14 @@ namespace _05_Schulte_Table
             viewModel = new ViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Start_Click(object sender, RoutedEventArgs e)
         {
             viewModel.createGameWindow(DificultySlider.Value);
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

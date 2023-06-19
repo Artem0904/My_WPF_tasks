@@ -15,11 +15,11 @@ namespace _05_Schulte_Table
             int count = 0;
             if (SliderValue == 0)
             {
-                count = 9;
+                count = 3;
             }
-            else if (SliderValue == 0)
+            else if (SliderValue == 1)
             {
-                count = 7;
+                count = 5;
             }
             else
             {
@@ -29,6 +29,5 @@ namespace _05_Schulte_Table
             gameWindow.ShowDialog();
             gameWindow.Close();
         }
-
     }
 }

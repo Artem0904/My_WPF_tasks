@@ -13,10 +13,10 @@ namespace _05_Schulte_Table
         // ------- Binding Properties -------
         public IEnumerable<CellVM> Cells => cells;
         public int FirstNumber => 1;
-        public int LastNumber => Size * Size - 1; // due to we have eye cell in center
-        public int Size { get; }
+        public int LastNumber => Size * Size - 1;
+        public int Size { get; } = 5;
 
-        public TableVM(int size)
+        public GameViewModel(int size)
         {
             Size = size;
 
@@ -24,16 +24,18 @@ namespace _05_Schulte_Table
             {
                 cells.Add(new CellVM(i));
             }
+
             cells.Shuffle();
 
             cells.Insert(cells.Count / 2, new CellVM());
         }
-
     }
     public enum CellColor
     {
         White, Yellow, Green, Blue, Red, Purple
     }
+    
+
     public class CellVM
     {
         private static Random rnd = new();

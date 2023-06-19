@@ -19,13 +19,13 @@ namespace _05_Schulte_Table
     /// </summary>
     public partial class GameWindow : Window
     {
-        int count = 5;
-        GameViewModel gameViewModel = new GameViewModel();
-        public GameWindow(int count)
+        GameViewModel gameViewModel;
+        public GameWindow(int size)
         {
             InitializeComponent();
-            this.count = count;
+            gameViewModel = new GameViewModel(size);
             this.DataContext = gameViewModel;
+            
         }
     }
 }

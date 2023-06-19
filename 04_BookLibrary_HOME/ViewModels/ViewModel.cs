@@ -37,7 +37,7 @@ namespace _04_BookLibrary_HOME.ViewModels
 
         public void Prev()
         {
-            if(CurrentBook != 0 /*|| CurrentBook != -1*/)
+            if(CurrentBook != 0)
             {
                 CurrentBook--;
                 SelectedBook = library[CurrentBook];

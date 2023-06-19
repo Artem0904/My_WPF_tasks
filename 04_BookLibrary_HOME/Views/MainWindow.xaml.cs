@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _04_BookLibrary_HOME.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,24 @@ namespace _04_BookLibrary_HOME
     /// </summary>
     public partial class MainWindow : Window
     {
+        ViewModel viewModel = new ViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = viewModel;
+            viewModel.add();
+            LibraryListBox.ItemsSource = viewModel.Library;
         }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.Next();
+        }
+
+        private void Prev_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.Prev();   
+        }
+
     }
 }

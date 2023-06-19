@@ -8,7 +8,7 @@ namespace _05_Schulte_Table
 {
     public class ViewModel
     {
-        GameWindow gameWindow = new GameWindow(5);
+        GameWindow gameWindow = new GameWindow(3);
         
         public void createGameWindow(double SliderValue)
         {

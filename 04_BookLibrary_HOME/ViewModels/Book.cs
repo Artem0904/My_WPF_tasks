@@ -21,6 +21,7 @@ namespace _04_BookLibrary_HOME.ViewModels
             this.Author = Autor;
             this.ReleaseDate = ReleaseDate;
         }
+        public Book() {}
         public override string ToString()
         {
             return $"{Title} by {Author}    {ReleaseDate.Year}"; 

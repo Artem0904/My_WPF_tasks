@@ -11,15 +11,15 @@ namespace _04_BookLibrary_HOME.ViewModels
     [AddINotifyPropertyChangedInterface]
     internal class ViewModel
     {
-        public Book book1 = new Book("Wow", "dsgsdsdkjghsdghsdsifhsdxlsnhgksggggggggggggdlghdkjghsfgkljsdghkjghskghskghkfghjfghskgjsdf", "Authooor", new DateOnly(2001, 6, 5));
-        public Book book2 = new Book("Wow", "dsgsdstretdkjghsdghsdsifhsdxlsnhgksdlghdkjghsfgkljsdghkjghskghskghkfghjfghskgjsdf", "Authooor", new DateOnly(2001, 6, 5));
-        public Book book3 = new Book("Wow", "dsgsdsfdsfdgfgdkjghsdghsdsifhsdxlsnhgksdlghdkjghsfgkljsdghkjghskghskghkfghjfghskgjsdf", "Authooor", new DateOnly(2001, 6, 5));
+        public Book book1 = new Book("Wow", "Some description", "Authooor1", new DateOnly(2001, 6, 5));
+        public Book book2 = new Book("Wow", "Some description", "Authooor2", new DateOnly(2001, 6, 5));
+        public Book book3 = new Book("Wow", "Some description", "Authooor3", new DateOnly(2001, 6, 5));
         private ObservableCollection<Book> library = new ObservableCollection<Book> { };
         public IEnumerable<Book> Library => library;
 
-        private int CurrentBook = 0;
-        public Book SelectedBook { get; set; }
-        public void add()
+        private int CurrentBook = -1;
+        public Book SelectedBook { get; set; } = new Book();
+        public void Init()
         {
             library.Add(book1);
             library.Add(book2);
@@ -28,20 +28,25 @@ namespace _04_BookLibrary_HOME.ViewModels
 
         public void Next()
         {
-            if(CurrentBook != library.Count)
+            if(CurrentBook != library.Count - 1)
             {
-                SelectedBook = library[CurrentBook];
                 CurrentBook++;
+                SelectedBook = library[CurrentBook];
             }
         }
 
         public void Prev()
         {
-            if(CurrentBook != 0)
+            if(CurrentBook != 0 /*|| CurrentBook != -1*/)
             {
-                SelectedBook = library[CurrentBook];
                 CurrentBook--;
+                SelectedBook = library[CurrentBook];
             }
+        }
+
+        public void Add(Book book)
+        {
+            library.Add((Book)book);
         }
     }
 }

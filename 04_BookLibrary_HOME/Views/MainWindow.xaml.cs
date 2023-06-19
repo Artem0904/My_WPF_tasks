@@ -26,7 +26,7 @@ namespace _04_BookLibrary_HOME
         {
             InitializeComponent();
             this.DataContext = viewModel;
-            viewModel.add();
+            viewModel.Init();
             LibraryListBox.ItemsSource = viewModel.Library;
         }
 
@@ -40,5 +40,14 @@ namespace _04_BookLibrary_HOME
             viewModel.Prev();   
         }
 
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

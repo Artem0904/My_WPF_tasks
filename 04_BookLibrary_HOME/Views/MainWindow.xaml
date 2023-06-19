@@ -5,34 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_04_BookLibrary_HOME"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-
-    <Window.Resources>
-        <Style x:Key="ButtonlStyle" TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="Background" Value="Red"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="BorderThickness" Value="1"/>
-        </Style>
-        
-        <Style x:Key="TextStyle" TargetType="{x:Type Label}">
-            <Setter Property="FontSize" Value="20"/>
-        </Style>
-    </Window.Resources>
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="380"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="0.7*"/>
-                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label FontSize="30" HorizontalAlignment="Center">Details</Label>
 
@@ -44,15 +32,19 @@
 
             <Label Grid.Row="3" Style="{StaticResource TextStyle}">Description:</Label>
             <TextBlock Grid.Row="4" Text="{Binding SelectedBook.Description}" Padding="5,0,0,0" Margin="5" x:Name="DescriptionTxtBlock" FontSize="16"></TextBlock>
-            
-            <Button Grid.Row="5" Margin="10" Width="120" Height="50" HorizontalAlignment="Left" Click="Prev_Click">Previos</Button>
-            <Button Grid.Row="5" Margin="10" Width="120" Height="50" HorizontalAlignment="Right" Click="Next_Click">Next</Button>
+
+            <Button Grid.Row="5" Style="{StaticResource ButtonlStyle}" HorizontalAlignment="Left" Click="Prev_Click" >Previos</Button>
+            <Button Grid.Row="5" Style="{StaticResource ButtonlStyle}" HorizontalAlignment="Right" Click="Next_Click">Next</Button>
         </Grid>
         
         <DockPanel Grid.Column="1">
             <Label DockPanel.Dock="Top" FontSize="30" HorizontalAlignment="Center">Library</Label>
-            
-            <ListBox x:Name="LibraryListBox" Margin="10" SelectedItem="{Binding SelectedBook, Mode=OneWayToSource}"/> 
+
+            <Grid DockPanel.Dock="Bottom">
+                <Button DockPanel.Dock="Bottom" Content="Exit" Style="{StaticResource ButtonlStyle}" HorizontalAlignment="Right" Click="Exit_Click"/>
+            </Grid>
+
+            <ListBox DockPanel.Dock="Top" x:Name="LibraryListBox" Margin="10" SelectedItem="{Binding SelectedBook, Mode=OneWayToSource}"/> 
         </DockPanel>
     </Grid>
 </Window>
